@@ -2,6 +2,18 @@
 # coding=utf-8
 #导入需要的三个库，requests网络交互，bs4获取标签，os处理系统操作
 
+'''
+作者：树虫
+行业：IT软件工程
+年龄：30岁
+学习编程时间：2个半月
+介绍项目：本项目是通过requests获取网络地址信息，再通过OS模块进行读写处理，网页图片爬去的功能。
+学习感受：本次参赛是从学习编程以来第一次自己尝试完成一个完整的工程，学习过程中得到了周鑫鑫同学的大力帮助支持与鼓励。
+从实际项目中学习了requests模块，OS模块，列表，函数等编程知识。深深的感觉到正式的项目是最好的练习与学习，感谢码上行动提供的这次锻炼机会！
+自己认为是非常有效的一种学习方式。（如果自己主动性再强一些就更好了）。
+'''
+
+
 import requests
 import bs4
 import os
@@ -47,6 +59,7 @@ def downliad_pic(pic_addresses):
      for i in pic_addresses:
          try:
              #请求图片网址
+             i = 'http:'+ i
              pic_resp = requests.get(i,headers = header)
              #二进制方式读取网页
              pic = pic_resp.content
@@ -79,7 +92,8 @@ def main():
             break
     print ('正在下载...')
     pic_addresses = req(start_page, end_page)
-    downliad_pic(pic_addresses)
+
+    (pic_addresses)
     print ('全部下载完成')
 
 main()
